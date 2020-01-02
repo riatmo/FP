@@ -36,6 +36,8 @@ namespace Transaksi_PreOrder
         //objek kontroller detail
         private DetailPesananController controllerdetail;
 
+        private PelangganController controllerPelanggan;
+
         //private AdminController controllerAdmin;
 
         // deklarasi field untuk menyimpan status entry data (input baru atau update)
@@ -44,12 +46,15 @@ namespace Transaksi_PreOrder
         // deklarasi field untuk meyimpan objek pesanan
         private Pesanan psn;
 
-        
+        private Pelanggan plg;
+
+
 
         public FormPesanan()
         {
             InitializeComponent();
             controllerdetail = new DetailPesananController();
+            controllerPelanggan = new PelangganController();
 
 
         }
@@ -115,6 +120,20 @@ namespace Transaksi_PreOrder
             // jika data baru, inisialisasi objek mahasiswa
             if (isNewData) psn = new Pesanan();
 
+            if (isNewData)  plg = new Pelanggan();
+
+            plg.KdPembeli = txtKodePel.Text;
+            plg.Nama = txtNamaPel.Text;
+            plg.Hp = txtTelfon.Text;
+            plg.Alamat = txtAlamat.Text;
+            plg.Kecamatan = txtKecPesanan.Text;
+            plg.Kabupaten = txtKabPesanan.Text;
+            plg.Provinsi = txtProvPesanan.Text;
+            plg.KodePos = txtKdPosPesanan.Text;
+
+
+
+
             // set nilai property objek mahasiswa yg diambil dari TextBox
 
             datePesanan.Format = DateTimePickerFormat.Custom;
@@ -124,6 +143,7 @@ namespace Transaksi_PreOrder
             dateTempo.CustomFormat = "yyyy-MM-dd";
 
             psn.KdPesanan = txtKdPesanan.Text;
+            psn.KdPembeli = txtKodePel.Text;
             psn.KdAdmin = txtAdmin.Text;
             psn.TglPesan = datePesanan.Text;
             psn.JatuhTempo = dateTempo.Text;
@@ -140,6 +160,7 @@ namespace Transaksi_PreOrder
             {
                 // panggil operasi CRUD
                 result1 = controller1.Create(psn);
+                result1 = controllerPelanggan.Create(plg);
 
                 if (result1 > 0) // tambah data berhasil
                 {

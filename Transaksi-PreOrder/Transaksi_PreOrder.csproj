@@ -69,9 +69,17 @@
     <Compile Include="Controller\AdminController.cs" />
     <Compile Include="Controller\BarangController.cs" />
     <Compile Include="Controller\DetailPesananController.cs" />
+    <Compile Include="Controller\PelangganController.cs" />
     <Compile Include="Controller\PembelianController.cs" />
     <Compile Include="Controller\PesananController.cs" />
     <Compile Include="Controller\ProdusenController.cs" />
+    <Compile Include="View\FormPelanggan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormPelanggan.Designer.cs">
+      <DependentUpon>FormPelanggan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Repository\PelangganRepository.cs" />
     <Compile Include="View\FormListPelanggan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +186,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="View\FormPelanggan.resx">
+      <DependentUpon>FormPelanggan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FormListAdmin.resx">
       <DependentUpon>FormListAdmin.cs</DependentUpon>
     </EmbeddedResource>

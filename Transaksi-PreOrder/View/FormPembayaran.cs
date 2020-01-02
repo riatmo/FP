@@ -74,13 +74,13 @@ namespace Transaksi_PreOrder
             //dateTempo.Text = psn.JatuhTempo;
             //txtStatusPesanan.Text = psn.StatusPesanan;
             lblKodePsn.Text = psn.KdPesanan;
+            txtKdTpembeli.Text = psn.KdPembeli;
+            txtKdTatasnama.Text = controller1.Nama(psn.KdPembeli);
             cmbPesanan.Text = psn.StatusPesanan;
             cmbPilihPembayaran.Text = psn.CaraBayar;
             txtTotTag.Text = Convert.ToString( controller1.Total(psn.KdPesanan));
             txtJumPem.Text = Convert.ToString(psn.Dp);
-
-            
-                txtKekurangan.Text = Convert.ToString(controller1.Total(psn.KdPesanan) - Convert.ToInt16( txtJumPem.Text));
+            txtKekurangan.Text = Convert.ToString(controller1.Total(psn.KdPesanan) - Convert.ToInt16( txtJumPem.Text));
             
             
             //txtKekurangan.Text = Convert.ToString(psn.SisaPembayaran);
@@ -107,6 +107,11 @@ namespace Transaksi_PreOrder
            
             
 
+        }
+
+        private void FormPembayaran_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

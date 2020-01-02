@@ -161,5 +161,20 @@ namespace Transaksi_PreOrder.Controller
             return no;
         }
 
+        public string Nama(string kdpel)
+        {
+            string nama;
+            using (DbContext context = new DbContext())
+            {
+                // membuat objek class repository
+                _repository = new PesananRepository(context);
+
+                // panggil method Create class repository untuk menambahkan data
+                nama = _repository.Nama(kdpel);
+            }
+
+            return nama;
+        }
+
     }
 }

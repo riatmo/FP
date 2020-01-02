@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.lblStatusPesanan = new System.Windows.Forms.Label();
-            this.txtKdPembeli = new System.Windows.Forms.Label();
+            this.lblKode = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.txtAltPesanan = new System.Windows.Forms.TextBox();
+            this.txtKodePel = new System.Windows.Forms.TextBox();
             this.txtKecPesanan = new System.Windows.Forms.TextBox();
             this.txtKabPesanan = new System.Windows.Forms.TextBox();
             this.txtProvPesanan = new System.Windows.Forms.TextBox();
@@ -44,8 +44,8 @@
             this.btnTutup = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.txtNama = new System.Windows.Forms.Label();
+            this.txtNamaPel = new System.Windows.Forms.TextBox();
+            this.lblNama = new System.Windows.Forms.Label();
             this.txtAlamat = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.txtTelfon = new System.Windows.Forms.TextBox();
@@ -81,16 +81,16 @@
             this.lblStatusPesanan.TabIndex = 5;
             this.lblStatusPesanan.Text = "Status Pesanan";
             // 
-            // txtKdPembeli
+            // lblKode
             // 
-            this.txtKdPembeli.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtKdPembeli.AutoSize = true;
-            this.txtKdPembeli.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKdPembeli.Location = new System.Drawing.Point(3, 98);
-            this.txtKdPembeli.Name = "txtKdPembeli";
-            this.txtKdPembeli.Size = new System.Drawing.Size(97, 15);
-            this.txtKdPembeli.TabIndex = 6;
-            this.txtKdPembeli.Text = "Kode Pembeli";
+            this.lblKode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblKode.AutoSize = true;
+            this.lblKode.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKode.Location = new System.Drawing.Point(3, 98);
+            this.lblKode.Name = "lblKode";
+            this.lblKode.Size = new System.Drawing.Size(97, 15);
+            this.lblKode.TabIndex = 6;
+            this.lblKode.Text = "Kode Pembeli";
             // 
             // label8
             // 
@@ -136,14 +136,14 @@
             this.label11.TabIndex = 10;
             this.label11.Text = "Kode Pos";
             // 
-            // txtAltPesanan
+            // txtKodePel
             // 
-            this.txtAltPesanan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtAltPesanan.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAltPesanan.Location = new System.Drawing.Point(106, 95);
-            this.txtAltPesanan.Name = "txtAltPesanan";
-            this.txtAltPesanan.Size = new System.Drawing.Size(180, 21);
-            this.txtAltPesanan.TabIndex = 17;
+            this.txtKodePel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtKodePel.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtKodePel.Location = new System.Drawing.Point(106, 95);
+            this.txtKodePel.Name = "txtKodePel";
+            this.txtKodePel.Size = new System.Drawing.Size(180, 21);
+            this.txtKodePel.TabIndex = 17;
             // 
             // txtKecPesanan
             // 
@@ -241,25 +241,25 @@
             this.panel2.TabIndex = 28;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // textBox2
+            // txtNamaPel
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(106, 31);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(180, 21);
-            this.textBox2.TabIndex = 31;
+            this.txtNamaPel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtNamaPel.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNamaPel.Location = new System.Drawing.Point(106, 31);
+            this.txtNamaPel.Name = "txtNamaPel";
+            this.txtNamaPel.Size = new System.Drawing.Size(180, 21);
+            this.txtNamaPel.TabIndex = 31;
             // 
-            // txtNama
+            // lblNama
             // 
-            this.txtNama.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNama.AutoSize = true;
-            this.txtNama.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNama.Location = new System.Drawing.Point(3, 34);
-            this.txtNama.Name = "txtNama";
-            this.txtNama.Size = new System.Drawing.Size(97, 15);
-            this.txtNama.TabIndex = 30;
-            this.txtNama.Text = "Nama";
+            this.lblNama.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblNama.AutoSize = true;
+            this.lblNama.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNama.Location = new System.Drawing.Point(3, 34);
+            this.lblNama.Name = "lblNama";
+            this.lblNama.Size = new System.Drawing.Size(97, 15);
+            this.lblNama.TabIndex = 30;
+            this.lblNama.Text = "Nama";
             // 
             // txtAlamat
             // 
@@ -341,19 +341,19 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3.8236F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.55474F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.20842F));
-            this.tableLayoutPanel4.Controls.Add(this.txtNama, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.txtKdPembeli, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.lblNama, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.lblKode, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.lblTelfon, 0, 2);
             this.tableLayoutPanel4.Controls.Add(this.lblStatusPesanan, 0, 3);
             this.tableLayoutPanel4.Controls.Add(this.txtAlamat, 4, 0);
             this.tableLayoutPanel4.Controls.Add(this.txtStatusPesanan, 1, 3);
             this.tableLayoutPanel4.Controls.Add(this.label16, 3, 0);
             this.tableLayoutPanel4.Controls.Add(this.txtKdPosPesanan, 4, 4);
-            this.tableLayoutPanel4.Controls.Add(this.textBox2, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.txtNamaPel, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.txtProvPesanan, 4, 3);
             this.tableLayoutPanel4.Controls.Add(this.txtTelfon, 1, 2);
             this.tableLayoutPanel4.Controls.Add(this.txtKabPesanan, 4, 2);
-            this.tableLayoutPanel4.Controls.Add(this.txtAltPesanan, 1, 1);
+            this.tableLayoutPanel4.Controls.Add(this.txtKodePel, 1, 1);
             this.tableLayoutPanel4.Controls.Add(this.label11, 3, 4);
             this.tableLayoutPanel4.Controls.Add(this.txtKecPesanan, 4, 1);
             this.tableLayoutPanel4.Controls.Add(this.label10, 3, 3);
@@ -517,12 +517,12 @@
 
         #endregion
         private System.Windows.Forms.Label lblStatusPesanan;
-        private System.Windows.Forms.Label txtKdPembeli;
+        private System.Windows.Forms.Label lblKode;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtAltPesanan;
+        private System.Windows.Forms.TextBox txtKodePel;
         private System.Windows.Forms.TextBox txtKecPesanan;
         private System.Windows.Forms.TextBox txtKabPesanan;
         private System.Windows.Forms.TextBox txtProvPesanan;
@@ -532,8 +532,8 @@
         private System.Windows.Forms.Button btnTutup;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label txtNama;
+        private System.Windows.Forms.TextBox txtNamaPel;
+        private System.Windows.Forms.Label lblNama;
         private System.Windows.Forms.TextBox txtAlamat;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox txtTelfon;

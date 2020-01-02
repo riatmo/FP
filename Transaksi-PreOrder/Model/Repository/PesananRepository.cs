@@ -26,8 +26,8 @@ namespace Transaksi_PreOrder.Model.Repository
         {
             int result1 = 0;
         // deklarasi perintah SQL
-        string sql = @"insert into pesanan (kd_pesanan, kd_admin, sts_pesanan, tgl_pesanan, jatuh_tempo )
-                           values (@kdpesanan, @kd_admin, @sts_pesanan, @tgl_pesanan, @jatuh_tempo)";
+        string sql = @"insert into pesanan (kd_pesanan, kd_admin, sts_pesanan, tgl_pesanan, jatuh_tempo,kd_pembeli)
+                           values (@kdpesanan, @kd_admin, @sts_pesanan, @tgl_pesanan, @jatuh_tempo,@kd_pembeli)";
 
          //string sql = @"insert into pesanan (kd_pesanan, tgl_pesanan, cara_bayar, jatuh_tempo, catatan, uang_muka, sisa_bayar,kd_pembeli, kd_admin)
          //             values (@kd_pesanan, @tgl_pesanan, @cara_bayar, @jatuh_tempo, @catatan,@uang_muka,@sisa_bayar,kd_pembeli,@kd_admin)";
@@ -46,7 +46,7 @@ namespace Transaksi_PreOrder.Model.Repository
                 //cmd.Parameters.AddWithValue("@catatan", pesanan.Catatan);
                 // cmd.Parameters.AddWithValue("@uang_muka", pesanan.Dp);
                 // cmd.Parameters.AddWithValue("@sisa_bayar", pesanan.SisaPembayaran);
-                // cmd.Parameters.AddWithValue("@kd_pembeli", pesanan.KdPembeli);
+                 cmd.Parameters.AddWithValue("@kd_pembeli", pesanan.KdPembeli);
 
 
                 try
@@ -106,7 +106,7 @@ namespace Transaksi_PreOrder.Model.Repository
             try
             {
                 // deklarasi perintah SQL
-                string sql = @"select kd_pesanan, cara_bayar,jatuh_tempo, tgl_pesanan, sts_pesanan, total,uang_muka,sisa_bayar
+                string sql = @"select kd_pesanan, cara_bayar,jatuh_tempo, tgl_pesanan, sts_pesanan, total,uang_muka,sisa_bayar, kd_pembeli
                                from pesanan order by (SELECT RIGHT(kd_pesanan,3))";
                 //, tgl_pesanan, jatuh_tempo, sts_pesanan,cara_bayar
 
@@ -127,6 +127,7 @@ namespace Transaksi_PreOrder.Model.Repository
                             psn.total = Convert.ToInt16( dtr["total"]);
                             psn.Dp = Convert.ToInt16(dtr["uang_muka"]);
                             psn.SisaPembayaran  = Convert.ToInt16(dtr["sisa_bayar"]);
+                            psn.KdPembeli = dtr["kd_pembeli"].ToString();
 
                             list.Add(psn);
                         }
@@ -261,6 +262,33 @@ namespace Transaksi_PreOrder.Model.Repository
             }
 
             return no;
+        }
+
+        public string Nama(string kdpel)
+        {
+            string nama = "";
+
+            string sql = @"SELECT pembeli.nama_pembeli as jeneng from pembeli join pesanan on pembeli.kd_pembeli = pesanan.kd_pembeli where pesanan.kd_pembeli = @kdpembeli";
+
+
+            // membuat objek command menggunakan blok using
+            using (MySqlCommand cmd = new MySqlCommand(sql, _conn))
+            { 
+                cmd.Parameters.AddWithValue("@kdpembeli", kdpel);
+            
+                // membuat objek dtr (data reader) untuk menampung result set (hasil perintah SELECT)
+                using (MySqlDataReader dtr = cmd.ExecuteReader())
+                {
+                    // panggil method Read untuk mendapatkan baris dari result set
+                    if (dtr.Read())
+                    {
+                        nama = Convert.ToString(dtr["jeneng"]);
+                    }
+                }
+            }
+
+            return nama;
+
         }
 
     }
