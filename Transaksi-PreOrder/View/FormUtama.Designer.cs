@@ -47,6 +47,7 @@
             this.txtAdmin = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblOperator = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -59,7 +60,9 @@
             this.barAdmin = new System.Windows.Forms.ToolStripMenuItem();
             this.barPanduan = new System.Windows.Forms.ToolStripMenuItem();
             this.barTentang = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
+            this.transaksiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnPembelian = new System.Windows.Forms.ToolStripMenuItem();
+            this.lstPembelian = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -107,7 +110,6 @@
             this.lvwData.Size = new System.Drawing.Size(990, 584);
             this.lvwData.TabIndex = 0;
             this.lvwData.UseCompatibleStateImageBehavior = false;
-            
             // 
             // tableLayoutPanel2
             // 
@@ -312,6 +314,16 @@
             this.lblOperator.Text = "Operator";
             this.lblOperator.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(3, 408);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(194, 36);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "btnRefresh";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
@@ -338,6 +350,7 @@
             this.filToolStripMenuItem,
             this.aboutToolStripMenuItem,
             this.barAdmin,
+            this.transaksiToolStripMenuItem,
             this.barPanduan,
             this.barTentang});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -359,14 +372,14 @@
             // btnBuatPesanan
             // 
             this.btnBuatPesanan.Name = "btnBuatPesanan";
-            this.btnBuatPesanan.Size = new System.Drawing.Size(151, 22);
+            this.btnBuatPesanan.Size = new System.Drawing.Size(180, 22);
             this.btnBuatPesanan.Text = "Buat Pesanan";
             this.btnBuatPesanan.Click += new System.EventHandler(this.btnBuatPesanan_Click_1);
             // 
             // btnDetailPesanan
             // 
             this.btnDetailPesanan.Name = "btnDetailPesanan";
-            this.btnDetailPesanan.Size = new System.Drawing.Size(151, 22);
+            this.btnDetailPesanan.Size = new System.Drawing.Size(180, 22);
             this.btnDetailPesanan.Text = "Detail Pesanan";
             this.btnDetailPesanan.Click += new System.EventHandler(this.btnDetailPesanan_Click);
             // 
@@ -382,14 +395,14 @@
             // lstBarang
             // 
             this.lstBarang.Name = "lstBarang";
-            this.lstBarang.Size = new System.Drawing.Size(132, 22);
+            this.lstBarang.Size = new System.Drawing.Size(180, 22);
             this.lstBarang.Text = "List Barang";
             this.lstBarang.Click += new System.EventHandler(this.lstBarang_Click);
             // 
             // lstDistributor
             // 
             this.lstDistributor.Name = "lstDistributor";
-            this.lstDistributor.Size = new System.Drawing.Size(132, 22);
+            this.lstDistributor.Size = new System.Drawing.Size(180, 22);
             this.lstDistributor.Text = "Distributor";
             // 
             // barAdmin
@@ -407,18 +420,31 @@
             // barTentang
             // 
             this.barTentang.Name = "barTentang";
-            this.barTentang.Size = new System.Drawing.Size(62, 20);
+            this.barTentang.Size = new System.Drawing.Size(61, 20);
             this.barTentang.Text = "Tentang";
             // 
-            // button1
+            // transaksiToolStripMenuItem
             // 
-            this.button1.Location = new System.Drawing.Point(3, 408);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(194, 36);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "btnRefresh";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.transaksiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnPembelian,
+            this.lstPembelian});
+            this.transaksiToolStripMenuItem.Name = "transaksiToolStripMenuItem";
+            this.transaksiToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.transaksiToolStripMenuItem.Text = "Transaksi";
+            // 
+            // mnPembelian
+            // 
+            this.mnPembelian.Name = "mnPembelian";
+            this.mnPembelian.Size = new System.Drawing.Size(180, 22);
+            this.mnPembelian.Text = "Pembelian";
+            this.mnPembelian.Click += new System.EventHandler(this.mnPembelian_Click);
+            // 
+            // lstPembelian
+            // 
+            this.lstPembelian.Name = "lstPembelian";
+            this.lstPembelian.Size = new System.Drawing.Size(180, 22);
+            this.lstPembelian.Text = "List Pembelian";
+            this.lstPembelian.Click += new System.EventHandler(this.lstPembelian_Click);
             // 
             // FormUtama
             // 
@@ -481,6 +507,9 @@
         private System.Windows.Forms.TextBox txtAdmin;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripMenuItem transaksiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnPembelian;
+        private System.Windows.Forms.ToolStripMenuItem lstPembelian;
     }
 }
 

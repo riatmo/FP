@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 using Transaksi_PreOrder.Model.Entity;
 using Transaksi_PreOrder.Controller;
+using Transaksi_PreOrder.View;
 
 namespace Transaksi_PreOrder
 {
@@ -18,12 +19,14 @@ namespace Transaksi_PreOrder
         private List<Barang> listBarang = new List<Barang>();
         private List<DetailPesanan> detailPesanan = new List<DetailPesanan>();
         private List<Pesanan> listPesanan = new List<Pesanan>();
+        private List<Pembelian> listPembelian = new List<Pembelian>();
 
         //tampil kode admin yg login
         public string currentAdmin = Login.AdminInfo.CurrentLoggedInAdmin;
 
         private BarangController controller;
         private PesananController controller1;
+        private PembelianController pblController;
         //private PesananController pesananController;
 
        // private DetailPesananController controllerdetail;
@@ -34,8 +37,10 @@ namespace Transaksi_PreOrder
 
             controller = new BarangController();
             controller1 = new PesananController();
+            pblController = new PembelianController();
+
             //pesananController = new pesa
-           // controllerdetail = new DetailPesananController();
+            // controllerdetail = new DetailPesananController();
 
             InisialisasiListView();
             loadPesanan();
@@ -46,7 +51,7 @@ namespace Transaksi_PreOrder
 
         private void InisialisasiListView()
         {
-            lvwData.View = View.Details;
+            lvwData.View = System.Windows.Forms.View.Details;
             lvwData.FullRowSelect = true;
             lvwData.GridLines = true;
 
@@ -143,6 +148,11 @@ namespace Transaksi_PreOrder
             itemRow.SubItems[5].Text = psn.StatusPesanan;
 
             loadPesanan();
+        }
+
+        private void PembelianCreateEventHandler(Pembelian pbl)
+        {
+
         }
 
         private void btnBuatPesanan_Click(object sender, EventArgs e)
@@ -292,6 +302,19 @@ namespace Transaksi_PreOrder
             loadPesanan();
         }
 
-        
+        private void mnPembelian_Click(object sender, EventArgs e)
+        {
+            FormPembelian frmBeli = new FormPembelian("Pembelian", pblController);
+
+            //frmBeli.PembelianCreate += PembelianCreateEventHandler;
+
+            frmBeli.ShowDialog();
+        }
+
+        private void lstPembelian_Click(object sender, EventArgs e)
+        {
+            FormListPembelian frmListBeli = new FormListPembelian();
+            frmListBeli.ShowDialog();
+        }
     }
 }

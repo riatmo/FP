@@ -120,11 +120,13 @@
             // 
             this.lvwListPembelian.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lvwListPembelian.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvwListPembelian.HideSelection = false;
             this.lvwListPembelian.Location = new System.Drawing.Point(3, 3);
             this.lvwListPembelian.Name = "lvwListPembelian";
             this.lvwListPembelian.Size = new System.Drawing.Size(712, 370);
             this.lvwListPembelian.TabIndex = 0;
             this.lvwListPembelian.UseCompatibleStateImageBehavior = false;
+            this.lvwListPembelian.SelectedIndexChanged += new System.EventHandler(this.lvwListPembelian_SelectedIndexChanged);
             // 
             // tableLayoutPanel2
             // 

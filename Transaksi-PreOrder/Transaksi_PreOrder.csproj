@@ -109,6 +109,12 @@
       <DependentUpon>FormListDetail.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Repository\PembelianRepository.cs" />
+    <Compile Include="View\FormPembelian.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormPembelian.Designer.cs">
+      <DependentUpon>FormPembelian.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FormProdusen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,6 +195,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormListProdusen.resx">
       <DependentUpon>FormListProdusen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormPembelian.resx">
+      <DependentUpon>FormPembelian.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormProdusen.resx">
       <DependentUpon>FormProdusen.cs</DependentUpon>

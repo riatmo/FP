@@ -16,5 +16,10 @@ namespace Transaksi_PreOrder
         {
             InitializeComponent();
         }
+
+        private void lvwListPembelian_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
