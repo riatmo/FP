@@ -169,8 +169,9 @@ namespace Transaksi_PreOrder.Model.Repository
 
             // deklarasi perintah SQL
             string sql = @"DELETE FROM detail_pesanan where kd_detail=@kd_detail;
-                           UPDATE pesanan SET total = (SELECT SUM(subtotal) FROM detail_pesanan WHERE kd_pesanan = @kd_pesanan)
-                           WHERE kd_pesanan = @kd_pesanan 
+UPDATE pesanan SET total = (SELECT SUM(subtotal) FROM detail_pesanan WHERE kd_pesanan = @kd_pesanan)
+                           WHERE kd_pesanan = @kd_pesanan
+                           
                             ";
 
                            
@@ -193,7 +194,12 @@ namespace Transaksi_PreOrder.Model.Repository
                 }
             }
 
+            
+
+           
+
             return result;
+
         }
 
         public int BacaSUb(string kddet)

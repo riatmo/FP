@@ -22,7 +22,7 @@ namespace Transaksi_PreOrder
         public delegate void CreatePesananHandler(Pesanan psn);
 
         //event tambah data
-        public event CreatePesananHandler PesananCreate;
+        //public event CreatePesananHandler PesananCreate;
 
         //event update data
         public event CreatePesananHandler PesananUpdate;
@@ -36,6 +36,7 @@ namespace Transaksi_PreOrder
         public FormPembayaran()
         {
             InitializeComponent();
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -73,14 +74,44 @@ namespace Transaksi_PreOrder
             //dateTempo.Text = psn.JatuhTempo;
             //txtStatusPesanan.Text = psn.StatusPesanan;
             lblKodePsn.Text = psn.KdPesanan;
+            txtKdTpembeli.Text = psn.KdPembeli;
+            txtKdTatasnama.Text = controller1.Nama(psn.KdPembeli);
             cmbPesanan.Text = psn.StatusPesanan;
             cmbPilihPembayaran.Text = psn.CaraBayar;
+            txtTotTag.Text = Convert.ToString( controller1.Total(psn.KdPesanan));
+            txtJumPem.Text = Convert.ToString(psn.Dp);
+            txtKekurangan.Text = Convert.ToString(controller1.Total(psn.KdPesanan) - Convert.ToInt16( txtJumPem.Text));
+            
+            
+            //txtKekurangan.Text = Convert.ToString(psn.SisaPembayaran);
 
         }
 
         private void btnTambahTP_Click(object sender, EventArgs e)
         {
 
+
+
+            psn.CaraBayar = cmbPilihPembayaran.Text;
+            psn.Dp = Convert.ToInt16( txtJumPem.Text);
+
+            int result1 = 0;
+            result1 = controller1.Update(psn);
+
+            if (result1 > 0)
+            {
+                PesananUpdate(psn); // panggil event OnUpdate
+                this.Close();
+            }
+
+           
+            
+
+        }
+
+        private void FormPembayaran_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }
