@@ -17,7 +17,6 @@ namespace Transaksi_PreOrder
 {
     public partial class FormPesanan : Form
     {
-
         //Menampilkan kode admin yg login saat ini
         public string currentAdmin = Login.AdminInfo.CurrentLoggedInAdmin;
 
@@ -50,18 +49,14 @@ namespace Transaksi_PreOrder
         {
             InitializeComponent();
             controllerdetail = new DetailPesananController();
-
-
         }
 
         internal class PesananInfo
         {
             public static string KodePesanan {
-                get;
-                set;
+                get; set;
             }
         }
-
 
         // constructor untuk inisialisasi data ketika entri data baru
         public FormPesanan(string title, PesananController controller1)
@@ -79,8 +74,6 @@ namespace Transaksi_PreOrder
             //tampil kode admin yg login
             txtAdmin.Text = currentAdmin;
             //txtKdPesanan.Text = "PN00" + Convert.ToString(controller1.noPesanan() + 1);
-
-
         }
 
 
@@ -166,21 +159,7 @@ namespace Transaksi_PreOrder
                     PesananUpdate(psn); // panggil event OnUpdate
                     this.Close();
                 }
-            }
-
-            
-        }
-
-       
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void btnTutup_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+            }            
+        }       
     }
 }

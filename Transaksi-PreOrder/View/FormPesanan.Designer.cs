@@ -219,7 +219,6 @@
             this.btnTutup.TabIndex = 24;
             this.btnTutup.Text = "Selesai";
             this.btnTutup.UseVisualStyleBackColor = false;
-            this.btnTutup.Click += new System.EventHandler(this.btnTutup_Click);
             // 
             // panel1
             // 
@@ -238,8 +237,7 @@
             this.panel2.Location = new System.Drawing.Point(12, 167);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(611, 5);
-            this.panel2.TabIndex = 28;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            this.panel2.TabIndex = 28;  
             // 
             // textBox2
             // 

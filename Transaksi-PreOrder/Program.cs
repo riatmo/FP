@@ -17,7 +17,6 @@ namespace Transaksi_PreOrder
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-
             // buat objek form login
             Login login = new Login();
 

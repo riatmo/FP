@@ -25,12 +25,12 @@ namespace Transaksi_PreOrder.Model.Repository
         public int Create(Pesanan pesanan)
         {
             int result1 = 0;
-        // deklarasi perintah SQL
-        string sql = @"insert into pesanan (kd_pesanan, kd_admin, sts_pesanan, tgl_pesanan, jatuh_tempo )
-                           values (@kdpesanan, @kd_admin, @sts_pesanan, @tgl_pesanan, @jatuh_tempo)";
+            // deklarasi perintah SQL
+            string sql = @"insert into pesanan (kd_pesanan, kd_admin, sts_pesanan, tgl_pesanan, jatuh_tempo,kd_pembeli)
+                           values (@kdpesanan, @kd_admin, @sts_pesanan, @tgl_pesanan, @jatuh_tempo,@kd_pembeli)";
 
-         //string sql = @"insert into pesanan (kd_pesanan, tgl_pesanan, cara_bayar, jatuh_tempo, catatan, uang_muka, sisa_bayar,kd_pembeli, kd_admin)
-         //             values (@kd_pesanan, @tgl_pesanan, @cara_bayar, @jatuh_tempo, @catatan,@uang_muka,@sisa_bayar,kd_pembeli,@kd_admin)";
+            //string sql = @"insert into pesanan (kd_pesanan, tgl_pesanan, cara_bayar, jatuh_tempo, catatan, uang_muka, sisa_bayar,kd_pembeli, kd_admin)
+            //             values (@kd_pesanan, @tgl_pesanan, @cara_bayar, @jatuh_tempo, @catatan,@uang_muka,@sisa_bayar,kd_pembeli,@kd_admin)";
 
 
             // membuat objek command menggunakan blok using
@@ -46,7 +46,7 @@ namespace Transaksi_PreOrder.Model.Repository
                 //cmd.Parameters.AddWithValue("@catatan", pesanan.Catatan);
                 // cmd.Parameters.AddWithValue("@uang_muka", pesanan.Dp);
                 // cmd.Parameters.AddWithValue("@sisa_bayar", pesanan.SisaPembayaran);
-                // cmd.Parameters.AddWithValue("@kd_pembeli", pesanan.KdPembeli);
+                cmd.Parameters.AddWithValue("@kd_pembeli", pesanan.KdPembeli);
 
 
                 try

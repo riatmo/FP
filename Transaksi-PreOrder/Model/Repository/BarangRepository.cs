@@ -22,8 +22,6 @@ namespace Transaksi_PreOrder.Model.Repository
             _conn = context.Conn;
         }
 
-        
-
         public int Create(Barang brg)
         {
             int result = 0;
@@ -42,8 +40,6 @@ namespace Transaksi_PreOrder.Model.Repository
                 cmd.Parameters.AddWithValue("@harga", brg.Harga);
                 cmd.Parameters.AddWithValue("@ukuran", brg.Ukuran);
                 cmd.Parameters.AddWithValue("@warna", brg.Warna);
-
-
                 try
                 {
                     // jalankan perintah INSERT dan tampung hasilnya ke dalam variabel result
@@ -130,7 +126,7 @@ namespace Transaksi_PreOrder.Model.Repository
                 // deklarasi perintah SQL
                 string sql = @"select kd_barang, nama, harga,  ukuran, warna, kuantitas
                                from barang 
-                               order by nama";
+                               order by kd_barang";
 
                 //objek command
                 using (MySqlCommand cmd = new MySqlCommand(sql, _conn))

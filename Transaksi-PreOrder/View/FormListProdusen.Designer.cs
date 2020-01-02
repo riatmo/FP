@@ -76,6 +76,7 @@
             this.btnHapus.TabIndex = 1;
             this.btnHapus.Text = "Hapus";
             this.btnHapus.UseVisualStyleBackColor = false;
+            this.btnHapus.Click += new System.EventHandler(this.btnHapus_Click);
             // 
             // btnPerbaiki
             // 
@@ -89,6 +90,7 @@
             this.btnPerbaiki.TabIndex = 2;
             this.btnPerbaiki.Text = "Perbaiki";
             this.btnPerbaiki.UseVisualStyleBackColor = false;
+            this.btnPerbaiki.Click += new System.EventHandler(this.btnPerbaiki_Click);
             // 
             // btnTutup
             // 
@@ -102,6 +104,7 @@
             this.btnTutup.TabIndex = 0;
             this.btnTutup.Text = "Selesai";
             this.btnTutup.UseVisualStyleBackColor = false;
+            this.btnTutup.Click += new System.EventHandler(this.btnTutup_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -186,6 +189,7 @@
             this.txtCariProdusen.Size = new System.Drawing.Size(590, 21);
             this.txtCariProdusen.TabIndex = 0;
             this.txtCariProdusen.Text = "Ketik nama produsen yang ingin di cari ...";
+            this.txtCariProdusen.TextChanged += new System.EventHandler(this.txtCariProdusen_TextChanged);
             // 
             // btnCari
             // 
@@ -204,12 +208,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(743, 535);
             this.Controls.Add(this.tableLayoutPanel4);
             this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormListProdusen";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "FormListProdusen";
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);

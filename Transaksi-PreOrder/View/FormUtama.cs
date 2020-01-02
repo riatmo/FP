@@ -18,12 +18,14 @@ namespace Transaksi_PreOrder
         private List<Barang> listBarang = new List<Barang>();
         private List<DetailPesanan> detailPesanan = new List<DetailPesanan>();
         private List<Pesanan> listPesanan = new List<Pesanan>();
+        private List<Produsen> listProdusen = new List<Produsen>();
 
         //tampil kode admin yg login
         public string currentAdmin = Login.AdminInfo.CurrentLoggedInAdmin;
 
         private BarangController controller;
         private PesananController controller1;
+        private ProdusenController prodController;
         //private PesananController pesananController;
 
        // private DetailPesananController controllerdetail;
@@ -34,6 +36,7 @@ namespace Transaksi_PreOrder
 
             controller = new BarangController();
             controller1 = new PesananController();
+            prodController = new ProdusenController();
             //pesananController = new pesa
            // controllerdetail = new DetailPesananController();
 
@@ -143,13 +146,29 @@ namespace Transaksi_PreOrder
             
         }
 
+        private void ProdusenCreateEventHandler(Produsen prod)
+        {
+            /*// tambahkan objek prod yang baru ke dalam collection
+
+            // ENABLE BUAT DAFTAR PESANAN
+            listProdusen.Add(prod);
+
+            int noUrut = lvwData.Items.Count + 1;
+
+            // tampilkan data mhs yg baru ke list view
+            ListViewItem item = new ListViewItem(noUrut.ToString());
+            item.SubItems.Add(prod.KdProdusen);
+            item.SubItems.Add(prod.Nama);
+            item.SubItems.Add(prod.Alamat);
+            item.SubItems.Add(prod.Telpon);
+
+            lvwData.Items.Add(item);*/
+        }
+
         private void btnBuatPesanan_Click(object sender, EventArgs e)
         {
             
         }
-
-        
-
 
         private void btnEntryBarang_Click(object sender, EventArgs e)
         {
@@ -248,10 +267,7 @@ namespace Transaksi_PreOrder
         }
 
         private void btnPembayaran_Click(object sender, EventArgs e)
-        {
-            
-
-
+        {           
             if (lvwData.SelectedItems.Count > 0)
             {
                 // ambil objek mhs yang mau diedit dari collection
@@ -282,6 +298,21 @@ namespace Transaksi_PreOrder
         private void btnDetailPesanan_Click(object sender, EventArgs e)
         {
             FormListDetail frm = new FormListDetail();
+            frm.ShowDialog();
+        }
+
+        private void barProdusen_Click(object sender, EventArgs e)
+        {
+            FormProdusen formProdusen = new FormProdusen("Tambah Data Produsen", prodController);
+
+            formProdusen.ProdusenCreate += ProdusenCreateEventHandler;
+
+            formProdusen.ShowDialog();
+        }
+
+        private void lstDistributor_Click(object sender, EventArgs e)
+        {
+            FormListProdusen frm = new FormListProdusen();
             frm.ShowDialog();
         }
     }

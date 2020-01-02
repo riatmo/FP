@@ -25,8 +25,8 @@ namespace Transaksi_PreOrder
         //event update data
         public event CreateUpdateHandler onUpdate;
 
-        //objek kontraoller
-        private BarangController controller;
+        //objek controller
+        private BarangController brgController;
 
         // deklarasi field untuk menyimpan status entry data (input baru atau update)
         private bool isNewData = true;
@@ -41,21 +41,17 @@ namespace Transaksi_PreOrder
         }
 
         // constructor untuk inisialisasi data ketika entri data baru
-        public EntryBarang(string title, BarangController controller)
-            : this()
-        {
+        public EntryBarang(string title, BarangController brgController) : this() {
             // ganti text/judul form
             this.Text = title;
-            this.controller = controller;
+            this.brgController = brgController;
         }
 
         // constructor untuk inisialisasi data ketika mengedit data
-        public EntryBarang(string title, Barang obj, BarangController controller)
-            : this()
-        {
+        public EntryBarang(string title, Barang obj, BarangController brgController) : this() {
             // ganti text/judul form
             this.Text = title;
-            this.controller = controller;
+            this.brgController = brgController;
 
             isNewData = false; // set status edit data
             brg = obj; // set objek mhs yang akan diedit
@@ -93,7 +89,7 @@ namespace Transaksi_PreOrder
             if (isNewData) // tambah data baru, panggil method Create
             {
                 // panggil operasi CRUD
-                result = controller.Create(brg);
+                result = brgController.Create(brg);
 
                 if (result > 0) // tambah data berhasil
                 {
@@ -113,7 +109,7 @@ namespace Transaksi_PreOrder
             else // edit data, panggil method Update
             {
                 // panggil operasi CRUD
-                result = controller.Update(brg);
+                result = brgController.Update(brg);
 
                 if (result > 0)
                 {

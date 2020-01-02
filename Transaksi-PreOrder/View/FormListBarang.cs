@@ -29,14 +29,13 @@ namespace Transaksi_PreOrder
             
             ListBarang();
             LoadBarang();
-
         }
 
         //List view barang
         private void ListBarang()
         {
             
-            lvwListBarang.View = System.Windows.Forms.View.Details;
+            lvwListBarang.View = View.Details;
             lvwListBarang.FullRowSelect = true;
             lvwListBarang.GridLines = true;
 
@@ -92,10 +91,8 @@ namespace Transaksi_PreOrder
 
         }
 
-
         private void btnPerbaiki_Click(object sender, EventArgs e)
         {
-
             if(lvwListBarang.SelectedItems.Count > 0)
             { 
             // ambil objek mhs yang mau diedit dari collection
@@ -114,8 +111,7 @@ namespace Transaksi_PreOrder
             {
                 MessageBox.Show("Data belum dipilih", "Peringatan", MessageBoxButtons.OK,
                         MessageBoxIcon.Exclamation);
-            }
-
+            }           
         }
 
         private void btnHapus_Click(object sender, EventArgs e)

@@ -16,8 +16,6 @@ namespace Transaksi_PreOrder.Controller
         //objek CRUD
         private BarangRepository _repository;
 
-       
-
         public int Create(Barang brg)
         {
             int result = 0;

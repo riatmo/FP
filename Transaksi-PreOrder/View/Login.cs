@@ -27,18 +27,6 @@ namespace Transaksi_PreOrder
             }
         }
 
-        
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Login_Load(object sender, EventArgs e)
-        {
-
-        }
-
         public void btnLoginAppForm_Click(object sender, EventArgs e)
         {
             AdminController controller = new AdminController();

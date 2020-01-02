@@ -16,7 +16,6 @@ namespace Transaksi_PreOrder.Controller
         //objek CRUD
         private PesananRepository _repository;
 
-
         public int Create(Pesanan psn)
         {
             int result1 = 0;
@@ -24,7 +23,7 @@ namespace Transaksi_PreOrder.Controller
             // cek npm yang diinputkan tidak boleh kosong
             if (string.IsNullOrEmpty(psn.KdPesanan))
             {
-                MessageBox.Show("Kode barang harus diisi !!!", "Peringatan",
+                MessageBox.Show("Kode pesanan harus diisi !!!", "Peringatan",
                         MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return 0;
             }
@@ -41,11 +40,11 @@ namespace Transaksi_PreOrder.Controller
 
             if (result1 > 0)
             {
-                MessageBox.Show("Data mahasiswa berhasil disimpan !", "Informasi",
+                MessageBox.Show("Data pesanan berhasil disimpan !", "Informasi",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
-                MessageBox.Show("Data mahasiswa gagal disimpan !!!", "Peringatan",
+                MessageBox.Show("Data pesanan gagal disimpan !!!", "Peringatan",
                         MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
             return result1;
@@ -58,7 +57,7 @@ namespace Transaksi_PreOrder.Controller
             // cek npm yang diinputkan tidak boleh kosong
             if (string.IsNullOrEmpty(psn.KdPesanan))
             {
-                MessageBox.Show("Kode barang harus diisi !!!", "Peringatan",
+                MessageBox.Show("Kode pesanan harus diisi !!!", "Peringatan",
                         MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return 0;
             }
@@ -77,11 +76,11 @@ namespace Transaksi_PreOrder.Controller
 
             if (result1 > 0)
             {
-                MessageBox.Show("Data mahasiswa berhasil disimpan !", "Informasi",
+                MessageBox.Show("Data pesanan berhasil disimpan !", "Informasi",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
-                MessageBox.Show("Data mahasiswa gagal disimpan !!!", "Peringatan",
+                MessageBox.Show("Data pesanan gagal disimpan !!!", "Peringatan",
                         MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
             return result1;
@@ -121,11 +120,11 @@ namespace Transaksi_PreOrder.Controller
 
             if (result > 0)
             {
-                MessageBox.Show("Data mahasiswa berhasil dihapus !", "Informasi",
+                MessageBox.Show("Data pesanan berhasil dihapus !", "Informasi",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
-                MessageBox.Show("Data mahasiswa gagal dihapus !!!", "Peringatan",
+                MessageBox.Show("Data pesanan gagal dihapus !!!", "Peringatan",
                         MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
             return result;
